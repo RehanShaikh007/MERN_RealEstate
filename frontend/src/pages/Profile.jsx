@@ -130,8 +130,8 @@ const Profile = () => {
        <button disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Loading...' : 'Update'}</button>
      </form>
      <div className='flex justify-between mt-5'>
-      <span onClick={handleDeleteUser} className='text-red-700 cursor-pointer font-medium'>Delete Account</span>
-      <span onClick={handleSignOut} className='text-red-700 cursor-pointer font-medium'>Sign Out</span>
+      <span onClick={handleDeleteUser} className='border-solid border-2 p-2 rounded-lg border-red-700 hover:bg-red-700 hover:text-white text-red-700 cursor-pointer font-medium'>Delete Account</span>
+      <span onClick={handleSignOut} className='border-solid border-2 p-2 rounded-lg border-red-700 hover:bg-red-700 hover:text-white text-red-700 cursor-pointer font-medium'>Sign Out</span>
      </div>
      <p className='text-red-700 mt-5 font-medium'>{error ? error : ''}</p>
      <p className='text-green-700 mt-5 font-medium'>{updateSuccess ? 'User Updated Successfully!' : ''}</p>
