@@ -12,6 +12,8 @@ import {
   FaShare,
 } from 'react-icons/fa';
 import { FaLocationDot } from "react-icons/fa6";
+import {useSelector} from "react-redux"
+import Contact from "../components/Contact.jsx";
 
 const Listing = () => {
   SwiperCore.use([Navigation]);
@@ -21,6 +23,7 @@ const Listing = () => {
   const [copied, setCopied] = useState(false);
   const [contact, setContact] = useState(false);
   const params = useParams();
+  const {currentUser} = useSelector((state) => state.user);
   useEffect(() => {
     const fetchListing = async () => {
       try {
@@ -88,7 +91,7 @@ const Listing = () => {
                ? listing.discountPrice.toLocaleString('en-US')
                : listing.regularPrice.toLocaleString('en-US')
               }
-              {listing.type === 'rent' && '/ month'}
+              {listing.type === 'rent' && ' / month'}
             </p>
             <p className="flex items-center mt-6 gap-2 text-slate-600 font-medium">
               <FaLocationDot className="text-green-700"/>
@@ -126,7 +129,11 @@ const Listing = () => {
                 {listing.furnished ? 'Furnished' : 'UnFurnished'}
               </li>
             </ul>
-            
+            {currentUser && listing.userRef !== currentUser._id && !contact && (
+              <button onClick={() => setContact(true)} className="bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3">Contact Landlord</button>
+                   
+            )}
+            {contact && <Contact listing={listing}/>}
           </div>
         
         </div>
