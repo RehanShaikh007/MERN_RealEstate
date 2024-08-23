@@ -5,6 +5,8 @@ import './index.css'
 import { persistor, store } from './redux/store.js'
 import {Provider} from "react-redux"
 import {PersistGate} from 'redux-persist/integration/react'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>

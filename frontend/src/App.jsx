@@ -12,6 +12,7 @@ import UpdateListing from './pages/UpdateListing.jsx'
 import Listing from './pages/Listing.jsx'
 import Search from './pages/Search.jsx'
 
+
 const App = () => {
   return (
     <BrowserRouter>
