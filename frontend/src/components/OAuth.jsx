@@ -33,7 +33,7 @@ const OAuth = () => {
     }
   return (
     <button onClick={handleGoogleClick} type='button' className='border-double border-2 border-red-700 text-red-700 p-3 rounded-lg uppercase hover:bg-red-700 hover:text-white items-center flex justify-center gap-3 font-medium'>
-     <span><img className='w-6' src="../assets/google.png" alt="googleicon" /></span> Continue with google
+     <span><img className='w-6' src="/google.png" alt="googleicon" /></span> Continue with google
     </button>
   )
 }
