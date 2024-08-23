@@ -1,6 +1,23 @@
 # Premium Estate
 
-![Real Estate App Screenshot](https://your-image-link.png)
+# Screenshots
+
+![Screenshot 2024-08-23 175813](https://github.com/user-attachments/assets/5d66692a-40f3-4f1b-8b21-8ccd0f2ca4ad)
+![Screenshot 2024-08-23 180024](https://github.com/user-attachments/assets/f56969f9-65f4-446f-9489-27d272030d98)
+![Screenshot 2024-08-23 180645](https://github.com/user-attachments/assets/de4d5c64-7a47-4058-b53f-d1e37e631ebc)
+
+![Screenshot 2024-08-23 180125](https://github.com/user-attachments/assets/adaca141-1616-444f-84cf-c9c3dbf010e0)
+
+
+![Screenshot 2024-08-23 180403](https://github.com/user-attachments/assets/70d63664-6776-4949-a1c1-f1121635d035)
+
+![Screenshot 2024-08-23 180457](https://github.com/user-attachments/assets/db18c454-9262-4fb8-9b7e-d35d7c6481bb)
+![Screenshot 2024-08-23 180600](https://github.com/user-attachments/assets/6a367cba-4c57-4c00-beee-4fdb8330e8da)
+
+
+![Screenshot 2024-08-23 181531](https://github.com/user-attachments/assets/d407b5d5-451f-45fc-a9b1-6a188c02f2ee)
+
+
 
 ## Table of Contents
 
