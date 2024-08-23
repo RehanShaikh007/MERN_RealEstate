@@ -7,10 +7,10 @@ import {
 } from "firebase/storage";
 import { app } from "../firebase.js";
 import { useSelector } from "react-redux";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const CreateListing = () => {
-  const {currentUser} = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
@@ -125,18 +125,20 @@ const CreateListing = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if(formData.imageUrls.length < 1) return setError('You must Upload atleast One Image!');
-      if(formData.regularPrice < formData.discountPrice) return setError('Discount Price must be Lower than Regular Price!')
+      if (formData.imageUrls.length < 1)
+        return setError("You must Upload atleast One Image!");
+      if (formData.regularPrice < formData.discountPrice)
+        return setError("Discount Price must be Lower than Regular Price!");
       setLoading(true);
       setError(false);
-      const token = localStorage.getItem('authToken');
-      const res = await fetch('/api/listing/create', {
-        method: 'POST',
+      const token = localStorage.getItem("authToken");
+      const res = await fetch("/api/listing/create", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          "Authorization": `Bearer ${token}`
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        credentials: 'include',
+        credentials: "include",
         body: JSON.stringify({
           ...formData,
           userRef: currentUser._id,
@@ -199,7 +201,7 @@ const CreateListing = () => {
                 onChange={handleChange}
                 checked={formData.type === "sell"}
               />
-              <span>Sell</span>
+              <span>Sale</span>
             </div>
             <div className="flex gap-2">
               <input
@@ -286,24 +288,23 @@ const CreateListing = () => {
               </div>
             </div>
             {formData.offer && (
-               <div className="flex items-center gap-2">
-               <input
-                 type="number"
-                 id="discountPrice"
-                 min="0"
-                 max="1000000"
-                 required
-                 className="p-3 border-red-300 rounded-lg"
-                 onChange={handleChange}
-                 value={formData.discountPrice}
-               />
-               <div className="flex flex-col items-center">
-                 <p>Discounted Price</p>
-                 <span className="text-xs">($ / month)</span>
-               </div>
-             </div>
+              <div className="flex items-center gap-2">
+                <input
+                  type="number"
+                  id="discountPrice"
+                  min="0"
+                  max="1000000"
+                  required
+                  className="p-3 border-red-300 rounded-lg"
+                  onChange={handleChange}
+                  value={formData.discountPrice}
+                />
+                <div className="flex flex-col items-center">
+                  <p>Discounted Price</p>
+                  <span className="text-xs">($ / month)</span>
+                </div>
+              </div>
             )}
-           
           </div>
         </div>
         <div className="flex flex-col gap-4 flex-1">
@@ -355,7 +356,10 @@ const CreateListing = () => {
               </div>
             ))}
 
-          <button disabled={loading || uploading} className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
+          <button
+            disabled={loading || uploading}
+            className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
+          >
             {loading ? "Creating..." : "create Listing"}
           </button>
           {error && <p className="text-red-700 font-medium">{error}</p>}
